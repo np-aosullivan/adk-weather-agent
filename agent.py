@@ -1,31 +1,15 @@
 import os
-import asyncio
-from google.adk.agents import Agent
-from google.adk.sessions import InMemorySessionService
-from google.adk.runners import Runner
-from google.genai import types # For creating message Content/Parts
-
-
 import warnings
-# Ignore all warnings
-warnings.filterwarnings("ignore")
-
-
 import logging
-logging.basicConfig(level=logging.ERROR)
-
-
-print("Libraries imported.")
-
-
-import datetime
-from zoneinfo import ZoneInfo
 from google.adk.agents import Agent
-
-import os
 from dotenv import load_dotenv
 import requests
 from typing import Optional
+
+# Ignore all warnings
+warnings.filterwarnings("ignore")
+
+logging.basicConfig(level=logging.ERROR)
 
 load_dotenv()
 
@@ -57,10 +41,6 @@ def say_goodbye() -> str:
    """Provides a simple farewell message to conclude the conversation."""
    print(f"--- Tool: say_goodbye called ---")
    return "Goodbye! Have a great day."
-
-
-print("Greeting and Farewell tools defined.")
-
 
 
 # @title Define the get_current_weather tool
@@ -147,7 +127,6 @@ except Exception as e:
 # Ensure sub-agents were created successfully before defining the root agent.
 # Also ensure the original 'get_weather' tool is defined.
 root_agent = None
-runner_root = None # Initialize runner
 
 
 if greeting_agent and farewell_agent and 'get_current_weather' and 'get_forecast' in globals():
@@ -181,15 +160,4 @@ else:
    if not farewell_agent: print(" - Farewell Agent is missing.")
    if 'get_current_weather' not in globals(): print(" - get_current_weather function is missing.")
    if 'get_forecast' not in globals(): print(" - get_forecast function is missing.")
-
-
-
-
-
-
-
-
-
-
-
 
