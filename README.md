@@ -44,8 +44,9 @@ The agent team can provide current weather information, 14-day forecasts, and ha
 
 4.  **Install Dependencies:**
     Install the necessary Python libraries.
+    This command reads the `requirements.txt` file and installs the exact versions of all required packages.
     ```bash
-    pip install google-adk python-dotenv requests
+    pip install -r requirements.txt
     ```
 
 5.  **Configure Environment Variables:**
