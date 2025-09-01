@@ -66,7 +66,7 @@ The agent team can provide current weather information, 14-day forecasts, and ha
     ```bash
     adk web
     ```
-3.  The terminal will output a URL (usually `http://127.0.0.1:8000`). Open this in your browser and select the weather_agent from the dropdown menu to interact with the agent.
+3.  The terminal will output a URL (usually `http://127.0.0.1:8000`). Open this in your browser and select the agent from the dropdown menu to interact with the agent.
 
 ## 💬 Example Interactions
 
